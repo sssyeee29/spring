@@ -1,0 +1,40 @@
+package org.zerock.persistance;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import org.junit.Test;
+import org.springframework.jdbc.support.SQLErrorCodes;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class JDBCRootContextTests {
+
+	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String uid = "hr";
+	private String pass = "hr";
+	
+	
+	static { //static은 객체 안만들고 바로 메모리 공간에 올라가서 실행하면 무조건 실행됨
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testConnection() {
+		
+		try {
+			Connection conn = DriverManager.getConnection(url,uid,pass);
+			log.info("conn : " + conn);
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}
+
+

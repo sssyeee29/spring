@@ -1,0 +1,8 @@
+package org.zerock.repository;
+
+import org.springframework.stereotype.Repository;
+
+@Repository // 스캔해서 얘가 있으면 알아서 알아서 .. 가져옴 ?
+public class BoardRepository {
+
+}

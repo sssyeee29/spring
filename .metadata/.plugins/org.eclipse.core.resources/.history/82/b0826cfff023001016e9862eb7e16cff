@@ -1,0 +1,29 @@
+package org.zerock.repository;
+
+import static org.junit.Assert.*;
+
+import javax.sql.DataSource;
+
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import lombok.extern.log4j.Log4j;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+//servlet-context.xml에서 객체를 생성하고 있기 때문에. 파일주소를
+@ContextConfiguration({
+	"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml","file:src/main/webapp/WEB-INF/spring/root-context.xml"}
+}
+@Log4j
+public class BoardRepositoryTests {
+
+	private BoardRepository boardRepository;
+	
+	@Test
+	public void test() {
+		
+	}
+
+}

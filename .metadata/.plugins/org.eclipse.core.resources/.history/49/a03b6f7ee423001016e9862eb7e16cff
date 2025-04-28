@@ -1,0 +1,22 @@
+package org.zerock.persistance;
+
+import org.junit.Test;
+
+import lombok.extern.log4j.Log4j;
+
+@Log4j
+public class JDBCTests {
+
+	static { //static은 객체 안만들고 바로 메모리 공간에 올라가서 실행하면 무조건 실행됨
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void testConnection() {
+		
+	}
+}

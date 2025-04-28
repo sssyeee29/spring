@@ -1,0 +1,21 @@
+package org.zerock.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.zerock.dto.BoardVO;
+import org.zerock.repository.BoardRepository;
+
+@Service
+public class BoardService {
+	
+	@Autowired
+	private BoardRepository boardRepository;
+	
+	//전체데이터 가져오기 
+	public List<BoardVO> selectListBoards() {
+	
+		return boardRepository.selectAllBoards();
+	}
+}

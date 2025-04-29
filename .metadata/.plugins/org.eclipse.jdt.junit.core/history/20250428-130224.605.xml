@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="JDBCRootContextTests" project="Board" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="org.zerock.persistance.JDBCRootContextTests" time="0.39">
-    <testcase name="testConnection" classname="org.zerock.persistance.JDBCRootContextTests" time="0.39"/>
-  </testsuite>
-</testrun>

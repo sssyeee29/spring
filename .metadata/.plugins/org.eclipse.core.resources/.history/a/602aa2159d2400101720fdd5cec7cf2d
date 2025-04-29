@@ -1,0 +1,78 @@
+package org.zerock.controller;
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.zerock.dto.BoardVO;
+import org.zerock.service.BoardService;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j;
+import oracle.jdbc.proxy.annotation.Post;
+
+/*
+/board/boardList -> 전체데이터반환
+/board/view -> 상세페이지  
+ */
+
+
+@Controller 
+//@RestController
+@RequestMapping("/board")
+@RequiredArgsConstructor
+@Log4j
+public class BoardController {
+
+	private final BoardService boardService;
+	
+	@GetMapping("/boardList")
+	public String boardList(Model model) {
+		
+		List<BoardVO> list = boardService.selectListBoards(); //데이터 가져오기
+		
+		model.addAttribute("boardList", list); //데이터를 boardList에 담기, 근데 값이 1개가 아니라 여러개니까 순서대로
+		
+		return "boardList"; //jsp화면으로 전달 (view)
+	}
+	
+	@GetMapping("/register") //get방식이고
+	public String register() {
+		return "boardRegister"; //jsp화면 호출 
+	}
+	
+	//유효성체크 boardRegister.jsp에서 action하면 이 부분으로 오는것 
+	@PostMapping("/register") //이게 post방식
+	public String insertBoard(BoardVO vo) {
+		//입력값을 가져와서 db에 저장하는거 (boardRegister.jsp에서 등록을 누르면 등록되면서 리스트 화면이 보여짐)
+		boardService.insertBoard(vo); //boardService에 있는 insertBoard로 갔다가, BoardRepository insertBoard에도 갔다가 목록화면이 보여짐  	
+		return "redirect:/board/boardList"; //post에 redirect 요청을 한 것
+	}
+	
+	//목록 누르면 연결되는 화면 (상세페이지로 가기)
+	@GetMapping("/view")
+	public String viewBoard(@RequestParam("num") int num, Model model) { //jsp에서는 requestgetparameter였는데 여기서는 requestparam 
+					//DB에서 num(기본키)의 전체 데이터 가져와서 vo저장(DB에 존재하는 num이여야함(기본키))
+		BoardVO vo = boardService.selectOneByNum(num);
+		//vo에 저장된 num(??)의 데이터를 board변수에 담아서 boardView.jsp전달 
+		model.addAttribute("board",vo);
+		return "boardView";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteBoard(@RequestParam("num") int num) {
+		
+		BoardVO vo = boardService.selectOneByNum(num);
+		
+		return "boardDelete";
+	}
+}

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BoardRepositoryTests" project="Board" tests="5" started="5" failures="0" errors="0" ignored="0">
-  <testsuite name="org.zerock.repository.BoardRepositoryTests" time="0.741">
-    <testcase name="updateBoardTest" classname="org.zerock.repository.BoardRepositoryTests" time="0.517"/>
-    <testcase name="selectAlltest" classname="org.zerock.repository.BoardRepositoryTests" time="0.167"/>
-    <testcase name="test" classname="org.zerock.repository.BoardRepositoryTests" time="0.001"/>
-    <testcase name="selectOneByNumTest" classname="org.zerock.repository.BoardRepositoryTests" time="0.026"/>
-    <testcase name="insertBoardTest" classname="org.zerock.repository.BoardRepositoryTests" time="0.03"/>
-  </testsuite>
-</testrun>

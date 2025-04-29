@@ -99,3 +99,13 @@
 0:0:0:0:0:0:0:1 - - [28/Apr/2025:18:59:54 +0900] "GET / HTTP/1.1" 200 164
 0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:00:00 +0900] "GET /board/boardList HTTP/1.1" 200 8572
 0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:00:01 +0900] "GET /board/view?num=46 HTTP/1.1" 404 833
+127.0.0.1 - - [28/Apr/2025:19:04:21 +0900] "GET / HTTP/1.1" 200 163
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:21 +0900] "GET / HTTP/1.1" 200 163
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:25 +0900] "GET /board/boardList HTTP/1.1" 200 8572
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:27 +0900] "GET /board/view?num=46 HTTP/1.1" 200 1513
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:27 +0900] "GET /resource/css/shopping.css HTTP/1.1" 404 722
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:27 +0900] "GET /resource/script/board.js HTTP/1.1" 404 722
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:04:39 +0900] "GET /board/view?num=46 HTTP/1.1" 200 1515
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:06:29 +0900] "GET /board/BoardServlet?command=board_write_form HTTP/1.1" 404 722
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:06:31 +0900] "GET /board/BoardServlet?command=board_list HTTP/1.1" 404 722
+0:0:0:0:0:0:0:1 - - [28/Apr/2025:19:06:33 +0900] "GET /board/BoardServlet?command=board_list HTTP/1.1" 404 722

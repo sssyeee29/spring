@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="BoardRepositoryTests" project="Board" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="org.zerock.repository.BoardRepositoryTests" time="0.606">
-    <testcase name="selectAlltest" classname="org.zerock.repository.BoardRepositoryTests" time="0.605"/>
-    <testcase name="test" classname="org.zerock.repository.BoardRepositoryTests" time="0.001"/>
-  </testsuite>
-</testrun>

@@ -44,7 +44,7 @@ public class BoardServiceImpl implements BoardService{
 	@Override //전체 데이터 가져오기
 	public List<BoardVO> getList() {
 		log.info("getList.....");
-		return mapper.getList();
+		return mapper.getList(); 
 	}
 
 }

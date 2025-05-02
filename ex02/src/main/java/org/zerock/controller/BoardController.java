@@ -56,7 +56,7 @@ public class BoardController {
 		log.info("remove..........");
 		
 		service.remove(bno);
-		rttr.addFlashAttribute("result", "삭제 성공했습니다.");
+		rttr.addFlashAttribute("result", " 삭제 성공했습니다.");
 		
 		return "redirect:/board/list";
 	}
@@ -66,7 +66,7 @@ public class BoardController {
 	public String modify(BoardVO board, RedirectAttributes rttr) { //책에서 모든항목을 가져온다고 해서(표보면 나와있음) 
 		log.info("modify..........");
 		service.modify(board);
-		rttr.addFlashAttribute("result", "수정 성공했습니다.");
+		rttr.addFlashAttribute("result", " 수정 성공했습니다.");
 		return "redirect:/board/list";
 	}
 }

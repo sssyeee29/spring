@@ -68,9 +68,9 @@ $(document).ready(function(){
 		if(operation === 'remove'){
 			formObj.attr("action", "/board/remove")
 		}else if(operation === 'list'){
-			//move to list
-			self.location= "/board/list"; //get 방식
-			return;
+			formObj.attr("action", "/board/list").attr("method", "get");
+			formObj.empty(); //이걸 씀으로써 다시 list로 돌아갈때 url창에 내용들이 안뜸
+			
 		}
 		formObj.submit(); //위에 22번째줄에 있는 action으로 돌아감 
 	});

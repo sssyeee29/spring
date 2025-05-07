@@ -31,10 +31,10 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
-//		model.addAttribute("serverTime", formattedDate );
+//		model.addAttribute("serverTime", formattedDate ); //이 코드를 쓰면 날짜,시간값을 url에 가지고 감
 		
 //		return "home";
-		return "redirect:/board/list";
+		return "redirect:/board/list"; //get방식인데 redirect를 한 이유? 초기 진입 URL(/)로 접속한 사용자를 다른 페이지로 자동으로 보내기 위해서
 	}
 	
 }

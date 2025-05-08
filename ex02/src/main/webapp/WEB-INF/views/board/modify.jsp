@@ -20,6 +20,9 @@
                    <!-- /.panel-heading -->
                    <div class="panel-body">
                       <form role="form" action="/board/modify" method="post">
+                      		<input type="hidden" name="pageNum" value= '<c:out value="${cri.pageNum}"/>'>
+                         	<input type="hidden" name="amount" value= '<c:out value="${cri.amount}"/>'>
+                      
                        
                        	<div class="form-group">
                        		<label>Bno</label><input class="form-control" name="bno"
@@ -69,7 +72,12 @@ $(document).ready(function(){
 			formObj.attr("action", "/board/remove")
 		}else if(operation === 'list'){
 			formObj.attr("action", "/board/list").attr("method", "get");
-			formObj.empty(); //이걸 씀으로써 다시 list로 돌아갈때 url창에 내용들이 안뜸
+			let pageNumTag = $("input[name='pageNum']").clone();
+			let amountTag = $("input[name='amount']").clone();
+			
+			formObj.empty();//input태그 name속성값을 클리어 //이걸 씀으로써 다시 list로 돌아갈때 url창에 내용들이 안뜸
+			formObj.append(pageNumTag); //append해서 ()안의 값을 추가함 
+			formObj.append(amountTag);
 			
 		}
 		formObj.submit(); //위에 22번째줄에 있는 action으로 돌아감 

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +31,7 @@ public class BoardController {
 		List<BoardVO> list = service.getList(cri);
 		model.addAttribute("list", list); 
 		
-		model.addAttribute("pageMaker", new PageDTO(cri, 272));
+		model.addAttribute("pageMaker", new PageDTO(cri, service.getTotal(cri))); //여기서 전체 데이터를 조회해서 그거에 맞게 페이지가 생김
 	}
 	
 	@GetMapping("/register")
@@ -49,28 +50,40 @@ public class BoardController {
 	}
 	
 	@GetMapping({"/get", "/modify"})
-	public void get(@RequestParam Long bno, Model model) {
+	public void get(@RequestParam Long bno, @ModelAttribute("cri") Criterial cri, Model model) {
 		log.info("get...modify.......");
 		
 		model.addAttribute("board", service.get(bno));//db에서 bno에 해당하는 번호값을 가져와서 board에 담아서 해당 jsp로 이동
 	}
 	
 	@PostMapping("/remove")
-	public String remove(Long bno, RedirectAttributes rttr) {
+	public String remove(Long bno, @ModelAttribute("cri") Criterial cri, RedirectAttributes rttr) {
 		log.info("remove..........");
 		
-		service.remove(bno); //삭제하고 
-		rttr.addFlashAttribute("result", " 삭제 성공했습니다.");
+		if(service.remove(bno)) { 
+			rttr.addFlashAttribute("result", " 삭제 성공했습니다.");
+		}
+		
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("amount", cri.getAmount());
+
 		
 		return "redirect:/board/list";
 	}
 	
 	
 	@PostMapping("/modify")
-	public String modify(BoardVO board, RedirectAttributes rttr) { //책에서 모든항목을 가져온다고 해서(표보면 나와있음) 
+	public String modify(BoardVO board, @ModelAttribute("cri") Criterial cri, RedirectAttributes rttr) { //책에서 모든항목을 가져온다고 해서(표보면 나와있음) 
 		log.info("modify..........");
-		service.modify(board);
-		rttr.addFlashAttribute("result", " 수정 성공했습니다.");
+		
+		if(service.modify(board)) {
+			rttr.addFlashAttribute("result", " 수정 성공했습니다.");
+		
+		}
+		
+		rttr.addAttribute("pageNum", cri.getPageNum());
+		rttr.addAttribute("amount", cri.getAmount());
+		
 		return "redirect:/board/list";
 	}
 }

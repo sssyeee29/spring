@@ -18,4 +18,6 @@ public interface BoardService {
 //	public List<BoardVO> getList(); // 전체 데이터 조회 
 
 	public List<BoardVO> getList(Criterial cri); // 전체 데이터 조회 
+	
+	public int getTotal(Criterial cri); //전제 데이터 조회 or 조건 맞는 데이터 
 }

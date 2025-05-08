@@ -18,7 +18,7 @@ public class PageDTO {
 	private Criterial cri;
 	
 	public PageDTO(Criterial cri, int total) {
-		this.cri = cri;
+		this.cri = cri; 
 		this.total = total;
 		
 		//endPage - 끝페이지

@@ -42,10 +42,10 @@
 	
 	<sql id="criterial"><!-- 밑에서 공통으로 쓰려고 여기로 코드 빼서 사용 (밑에는 include해서 삽입 후 사용) -->
 	
-	<trim suffix="and"> <!-- trim이 끝날때 빠져나오면서 and를 붙여줌 -->
+	<trim prefix="(" suffix=") and"> <!-- trim이 끝날때 빠져나오면서 and를 붙여줌 -->
 		<!-- mybatis의 문법이라서 cdata로 묶으면 안됨 -->
 		<!-- collection="typeArr"이 부분에서 criterial에 String type이 실행하고 getTypeArr()메소드가 실행됨  -->
-		<foreach collection="typeArr" item="type" separator="or" open="(" close=")">
+		<foreach collection="typeArr" item="type" separator="or">
 			<if test="type =='T'.toString()">
 				title like '%' || #{keyword} || '%'
 			</if>

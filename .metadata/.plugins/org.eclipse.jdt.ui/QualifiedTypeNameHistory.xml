@@ -53,11 +53,11 @@
     <fullyQualifiedTypeName name="java.lang.Math"/>
     <fullyQualifiedTypeName name="org.zerock.domain.PageDTO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
-    <fullyQualifiedTypeName name="org.zerock.domain.Criterial"/>
     <fullyQualifiedTypeName name="org.junit.Test"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="org.apache.jasper.tagplugins.jstl.core.Out"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.zerock.domain.BoardVO"/>
+    <fullyQualifiedTypeName name="org.zerock.domain.Criterial"/>
 </qualifiedTypeNameHistroy>

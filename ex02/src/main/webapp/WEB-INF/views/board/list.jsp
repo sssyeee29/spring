@@ -50,20 +50,27 @@
                          </table>
                          
                          <!-- 검색조건 -->
-							
 						<div class="row">
 							<div class="col-lg-12"> <!-- 12등분 -->
 								<form action="/board/list" id="searchForm">
 									<select name="type">
-										<option value="">--</option>
-										<option value="T">제목</option>
-										<option value="C">내용</option>
-										<option value="W">작성자</option>
-										<option value="TC">제목 or 내용</option>
-										<option value="TW">제목 or 작성자</option>
-										<option value="TWC">제목 or 내용 or 작성자</option>
+										<option value="" 
+											<c:out value="${pageMaker.cri.type == null ? 'selected' : '' }" />>--</option>
+										<option value="T"
+											<c:out value="${pageMaker.cri.type == 'T' ? 'selected' : '' }" />>제목</option>
+										<option value="C"
+											<c:out value="${pageMaker.cri.type == 'C' ? 'selected' : '' }" />>내용</option>
+										<option value="W"
+											<c:out value="${pageMaker.cri.type == 'W' ? 'selected' : '' }" />>작성자</option>
+										<option value="TC"
+											<c:out value="${pageMaker.cri.type == 'TC' ? 'selected' : '' }" />>제목 or 내용</option>
+										<option value="TW"
+											<c:out value="${pageMaker.cri.type == 'TW' ? 'selected' : '' }" />>제목 or 작성자</option>
+										<option value="TWC"
+											<c:out value="${pageMaker.cri.type == 'TWC' ? 'selected' : '' }" />>제목 or 내용 or 작성자</option>
 									</select>
-									<input type="text" name="keyword">
+									<input type="text" name="keyword"
+										value=<c:out value="${pageMaker.cri.keyword}" /> >
 									<input type="hidden" name="pageNum" value='${pageMaker.cri.pageNum }'>
 									<input type="hidden" name="amount" value='${pageMaker.cri.amount }'>
 									<button class='btn btn-default'>검색</button>
@@ -71,8 +78,6 @@
 							</div>
 						
 						</div>
-
-
                          <!-- end 검색조건 -->
                          
                          
@@ -99,9 +104,14 @@
 						 </div>
                          <!-- 페이징 종료  -->
                          
+                         <!-- 페이지 조회한 값을 다른 페이지 이동시에도 유지해야함 -->
                          <form id="actionForm" action="/board/list" method="get">
                          	<input type="hidden" name="pageNum" value= "${pageMaker.cri.pageNum }">
                          	<input type="hidden" name="amount" value= "${pageMaker.cri.amount }">
+                        	<input type="hidden" name="keyword"
+										value=<c:out value="${pageMaker.cri.keyword}" /> >
+                        	<input type="hidden" name="type"
+										value=<c:out value="${pageMaker.cri.type}" /> >
                          </form>
                          
                      </div>
@@ -146,25 +156,25 @@
 	$(document).ready(function(){
 	   var result = '<c:out value="${result}"/>';
 		
-	   checkModal(result);
+	   checkModal(result); //위에서 받은 결과값을 checkModal 함수에 넘겨서 모달창의 유무를 결정하는거
 	   
 	   //브라우저의 현재 히스토리 항목을 새로운 상태로 대체.(history부분을 추가함으로써)
 	   //페이지를 새로고침 하거나 뒤로가기 했을 때 모달창이 다시 표시되지 않도록함.
 	   history.replaceState({}, null, null);
 	   
 	   function checkModal(result){
-		   if(result === '' || history.state) return;//null값이면 리턴
+		   if(result === '' || history.state) return;//null값이면 리턴 // result가 없거나, 이미 상태가 바뀐 페이지라면 아무것도안함 
 		   
-		   if(parseInt(result)>0){
+		   if(parseInt(result)>0){ //result가 숫자일때 -> 게시글을 쓰면 1번부터 번호가 생기니까 0보다 커서 실행됨
 			   $(".modal-body").html("게시글" + result + "번이 등록되었습니다.");
 		   }else{
 			   $(".modal-body").html("게시글" + result);
 		   }
 		   
-		   $("#myModal").modal("show");
+		   $("#myModal").modal("show"); // 모달창을 실제로 띄우는 부분 
 	   } //end checkModal
 	   
-	   $("#regBtn").on("click", function(){
+	   $("#regBtn").on("click", function(){ //글쓰기 버튼을 클릭하면 /board/register로 이동 
 		   self.location = "/board/register";
 	   });
 	   
@@ -185,10 +195,53 @@
 		   actionForm.append("<input type='hidden' name='bno' value='" + $(this).attr("href")+"'>");
 		   actionForm.attr("action", "/board/get");
 		   actionForm.submit();
+	   }); //end 상세페이지 이동시 pageNum, amount값 전달 
+	   
+	   //검색 버튼 이벤트 처리 
+	   let searchForm = $("#searchForm");
+	   
+	   $("#searchForm button").on("click", function(e){
+		
+		  if(!searchForm.find("option:selected").val()){
+			 alert("검색 종류를 선택하세요");
+			  return false;
+		  } 
+
+		  if(!searchForm.find("input[name='keyword']").val()){
+			 alert("키워드를 입력하세요");
+			  return false;
+		  } 
+		  
+		  //검색 조건 필터링 된 상태에서 1페이지로 이동 => 반드시 넣어줘야함
+		  searchForm.find("input[name='pageNum']").val("1"); //pageNum을 1로바꿔라 
+		 													//ex)7페이지에서 검색누르면 그 해당 검색내용들을 1페이지부터 보여줌 
+		  e.preventDefault(); //검색버튼 누르면 /board/list로 이동하는걸 막아줌 
+		  
+		  searchForm.submit();
+		   
 	   });
 	
 	});
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

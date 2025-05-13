@@ -62,10 +62,55 @@
          </div>
          <!-- /.row -->
 
+<script type="text/javascript" src="/resources/js/reply.js"></script>
+
+<!-- reply.js에서 서버랑 통신해서  서버 console에 값을 읽어오는것  
+		따라서 각 함수를 실행시킬때 실행하려는 코드만 남겨두고 나머지는 주석처리를 해야함 
+	-->
+<script type="text/javascript"> //console에 bno값을 찍어보기위함
+	let bnoValue = '<c:out value="${board.bno}"/>';
+	
+	replyService.remove(21, function(count){
+			if(count ==  'success'){
+				alert("삭제 성공");
+			}
+		
+		},
+			function(err){
+				alert("ERROR.......");
+		}	
+)
+	
+	/*
+	replyService.getList({bno:bnoValue, page:1},
+			function(list){
+			for(let i=0; i<list.length; i++){
+				console.log(list[i]);
+			}		
+		}
+	
+	);
+	
+	replyService.add(
+			{reply:"JS Test", replyer : "tester", bno:10},
+			function(result){
+				alert("Result : " + result);
+			},
+			function(error){
+				alert("error : " + error);
+			}
+		);
+	*/
+	
+	
+</script>
+
 <script type="text/javascript">
 // 
 	$(document).ready(function(){
 		let operForm = $("#operForm");
+		
+		console.log(replyService);
 		
 		$("button[data-oper='modify']").on("click", function(e){
 			operForm.attr("action", "/board/modify").submit();
@@ -79,3 +124,6 @@
 </script>
      
 <%@ include file="../includes/footer.jsp" %>
+
+
+

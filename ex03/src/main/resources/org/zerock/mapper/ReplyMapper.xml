@@ -4,6 +4,9 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.zerock.mapper.ReplyMapper">
 
+
+<!-- ReplyMapper.java에 있는 내용들을 토대로 쓰는것임 -->
+
 	<insert id="insert">
 		insert into tbl_reply(rno, bno, reply, replyer)
 		values(seq_reply.nextval, #{bno}, #{reply}, #{replyer})
@@ -22,10 +25,26 @@
 	</update>
 	
 	<select id="getListWithPaging" resultType="org.zerock.domain.ReplyVO">
-		select * from 
-		tbl_reply where bno = #{bno}
-		order by rno desc
+	
+	<![CDATA[
+			select rno, bno, reply, replyer, replyDate, updateDate
+			from(
+				select /*+ index(tbl_reply idx_reply)*/
+				rownum rn, rno, bno, reply, replyer, replyDate, updateDate
+				from tbl_reply
+				where bno = #{bno}
+				and rno > 0
+				and rownum <= #{cri.pageNum} * #{cri.amount}
+				)
+			where rn > (#{cri.pageNum}-1) * #{cri.amount}
+		 ]]>	
+		 
 	</select>
+	
+	<select id="getCountByBno" resultType="int">
+		select count(rno) from tbl_reply where bno = #{bno}
+	</select>
+	
 </mapper>
 
 

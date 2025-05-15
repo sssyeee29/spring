@@ -74,21 +74,12 @@
              
                      <!-- /.panel-heading -->
                      <div class="panel-body">
-             
                         <ul class="chat">
-                        	<li class="left clearfix" data-rno='12'>
-                        	<div>
-                        		<div class="header">
-                        			<strong class="primary-font">user00</strong>
-                        			<small class="pull-right text-muted">2025-05-14</small>
-                        		</div>
-                        		<p>Good Job!</p>
-                        		</div>
-                        	</li>
                         </ul>
-                       			
                      </div>
                      <!-- /.panel-body -->
+                     <div class="panel-footer"> <!-- 댓글페이지 번호 나오는곳 -->
+                     </div>
                  </div>
                  <!-- /.panel -->
              </div>
@@ -153,7 +144,15 @@
 		
 		function showList(page){
 			replyService.getList({bno:bnoValue, page: page || 1},
-				function(list){
+			
+				function(replyCnt, list){
+					
+					if(page == -1){ //마지막 페이지 이동 
+						pageNum = Math.ceil(replyCnt/10.0); //replyCnt:172 => 172/10.0 = 17.2 => ceil이 올림하면 18 
+						showList(pageNum);	//	pageNum : 18 => 죽, 마지막페이지로 이동 => 추가 댓글이 생길때마다 뒤로이동함		
+						return;
+					}
+				
 					let str="";
 					
 					if(list == null || list.length == 0){
@@ -171,7 +170,9 @@
                     	str += "<p>"+list[i].reply+"</p>"
                     	str += "</div></li>"
 					}
-					replyUL.html(str);		
+					replyUL.html(str);	
+					
+					showReplyPage(replyCnt); //페이징 처리 호출 (댓글페이지 번호 호출)
 			}		
 					
 		)
@@ -211,7 +212,7 @@
 			modal.find("input").val("");
 			modal.modal("hide");
 		
-			showList(1); // 새 댓글 등록시 바로 반영시키기 
+			showList(-1); // 새 댓글 등록시 바로 반영시키기 => -1은 마지막 페이지로 가라는 의미
 		})
 		
 	});
@@ -228,8 +229,9 @@
 			modalInputReplyDate.val(replyService.displayTime(reply.replyDate)).attr("readonly", "readonly");
 			modal.data("rno", reply.rno);
 			
-			modal.find("button[id = 'modalRegisterBtn']").hide();
-			
+			modal.find("button[id != 'modalCloseBtn']").hide();
+			modalModBtn.show();
+			modalRemoveBtn.show();
 			modal.modal("show");
 		});
 	});
@@ -243,10 +245,70 @@
 		replyService.update(reply, function(result){
 			alert(result);
 			modal.modal("hide");
-			showList(1);
+			showList(pageNum);
 		})
 		
 	});
+	
+	//페이징 처리
+    let pageNum = 1;
+    let replyPageFooter = $(".panel-footer");
+    
+    function showReplyPage(replyCnt){ //PageDTO에서 했던 페이징 처리처럼 하는것 
+    
+       let endNum = Math.ceil(pageNum /10.0) * 10;  
+       let startNum = endNum - 9;
+       
+       let prev = startNum != 1;  //이전버튼
+       let next = false;          //다음버튼
+       
+       //real page( 끝 페이지 재계산)
+       if(endNum * 10 >= replyCnt){
+          endNum = Math.ceil(replyCnt/10.0);
+       }
+       
+       //next버튼 유무 조건?
+       if(endNum *10 < replyCnt){ 
+          next = true;
+       }
+       
+       //list.jsp <!--페이징 처리--> 이부분을 넣은거 
+       let str = "<ul class='pagination pull-right'>";
+       
+       if(prev){
+          str+= "<li class='page-item'>"
+          str+= "<a class='page-link' href='"+(strNum-1)+"'>Previous</a></li>";
+       }
+       
+       for(let i=startNum; i<=endNum; i++){
+          let active = pageNum == i? "active":"";
+          
+          str+= "<li class='page-item "+active+"'><a class='page-link' href='"+i+"'>" + i + "</a></li>";
+       }
+       
+       if(next){
+          str+= "<li class='page-item'>"
+          str+= "<a class='page-link' href='"+(endNum+1)+"'>Next</a></li>";
+       }
+       
+       str+= "</ul>";
+       
+       console.log(str);
+       
+       replyPageFooter.html(str);
+       
+    }  //end showReplyPage
+    
+    replyPageFooter.on("click", "li a", function(e){
+        e.preventDefault();
+        
+        let targetPageNum = $(this).attr("href");
+        
+        pageNum = targetPageNum;
+        
+        showList(pageNum); // 페이징처리호출에서 불러주고 있는것 
+        
+     }); //end replyPageFooter
 	
 	//댓글 삭제 이벤트 처리
 	modalRemoveBtn.on("click", function(e){
@@ -256,7 +318,7 @@
 		replyService.remove(rno, function(result){
 			alert(result);
 			modal.modal("hide");
-			showList(1);
+			showList(pageNum);
 		})
 		
 	});

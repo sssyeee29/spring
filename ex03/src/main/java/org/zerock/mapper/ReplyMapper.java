@@ -21,5 +21,5 @@ public interface ReplyMapper {
 			@Param("bno") Long bno
 			);
 			
-	
+	public int getCountByBno(Long bno); //전체 댓글의 갯수 
 }

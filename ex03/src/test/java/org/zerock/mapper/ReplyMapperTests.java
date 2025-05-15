@@ -74,6 +74,14 @@ public class ReplyMapperTests {
 		mapper.getListWithPaging(cri, bno)
 				.forEach(reply -> log.info(reply)); //1048617에 해당하는 값이 여러개니까 forEach를 써서 반복문을 돌림
 	}
+	
+	@Test
+	public void testList2() {
+		Criterial cri = new Criterial(1,3); //2페이지에 3개씩 보여줘라 
+		
+		mapper.getListWithPaging(cri, 1048641L)
+			.forEach(list-> log.info(list));
+	}
 }
 
 

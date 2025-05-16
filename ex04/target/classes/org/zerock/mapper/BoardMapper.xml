@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.zerock.mapper.BoardMapper">
+
+  <select id="read" resultType="org.zerock.domain.BoardVO">
+    select * from tbl_board where bno = #{bno}
+  </select>
+  
+  <select id="getList" resultType="org.zerock.domain.BoardVO">
+  	select * from tbl_board where bno > 0 order by bno asc
+  </select>
+  
+  <insert id="insert">
+  	insert into tbl_board(bno, title, content, writer) 
+  	values(seq_board.nextval, #{title}, #{content}, #{writer})
+  </insert>
+  
+  <insert id="insertSelectKey"> 
+  <!-- 몇번증가하는지 bno를 통해 알수있음 seq_board.nextval여기서 숫자를 읽어서 bno에 넣어줌 -->
+	<selectKey keyProperty="bno" order="BEFORE" resultType="long">
+		select seq_board.nextval from dual
+	</selectKey>  
+
+  	insert into tbl_board(bno, title, content, writer) 
+  	values(#{bno}, #{title}, #{content}, #{writer})
+  </insert>
+	
+	<delete id="delete">
+	 	delete from tbl_board where bno = #{bno}	
+	</delete>
+	
+	<update id="update">
+		update tbl_board set 
+		title = #{title},
+		content = #{content},
+		writer = #{writer},
+		updatedate = sysdate <!-- db에 있는거 쓰는거라서 updatedate -->
+		where bno = #{bno}
+	</update>
+	
+	<sql id="criterial"><!-- 밑에서 공통으로 쓰려고 여기로 코드 빼서 사용 (밑에는 include해서 삽입 후 사용) -->
+	
+	<trim prefix="(" suffix=") and"> <!-- trim이 끝날때 빠져나오면서 and를 붙여줌 -->
+		<!-- mybatis의 문법이라서 cdata로 묶으면 안됨 -->
+		<!-- collection="typeArr"이 부분에서 criterial에 String type이 실행하고 getTypeArr()메소드가 실행됨  -->
+		<foreach collection="typeArr" item="type" separator="or">
+			<if test="type =='T'.toString()">
+				title like '%' || #{keyword} || '%'
+			</if>
+
+			<if test="type =='C'.toString()">
+				content like '%' || #{keyword} || '%'
+			</if>
+			
+			<if test="type =='W'.toString()">
+				writer like '%' || #{keyword} || '%'
+			</if>
+		</foreach>
+	</trim>	
+	
+	</sql>
+	
+	<select id="getListWithPaging" resultType="org.zerock.domain.BoardVO">
+		
+		 <![CDATA[
+			select bno, title, content, writer, regdate, updatedate, replycnt
+			from(
+				select /*+ index_desc(tbl_board pk_board)*/
+				rownum rn, bno, title, content, writer, regdate, updatedate, replycnt
+				from tbl_board
+				where
+		 ]]>		
+			
+		<include refid="criterial"></include>
+				
+		<![CDATA[
+			rownum <= #{pageNum} * #{amount}
+			)
+			where rn > (#{pageNum}-1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from tbl_board 
+		where
+		<include refid="criterial"></include>
+		bno > 0 <!-- 인덱스로 조회하겠다. -->
+	</select>
+	
+	<select id="searchTest" resultType="org.zerock.domain.BoardVO">
+		
+		<![CDATA[
+			select * from tbl_board
+			where
+		]]>
+		
+		<trim suffix="and"> <!-- trim이 끝날때 빠져나오면서 and를 붙여줌 -->
+			<!-- mybatis의 문법이라서 cdata로 묶으면 안됨 -->
+			<foreach collection="map" index="key" item="val" separator="or" open="(" close=")">
+				<if test="key=='T'.toString()">
+					title like #{val}
+				</if>
+	
+				<if test="key=='C'.toString()">
+					content like #{val}
+				</if>
+				
+				<if test="key=='W'.toString()">
+					writer like #{val}
+				</if>
+			</foreach>
+		</trim>		
+		<![CDATA[
+			rownum < 10
+		]]>
+	</select>
+	
+	<update id="updateReplyCnt">
+		update tbl_board set replyCnt = replycnt + #{amount} where bno = #{bno}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

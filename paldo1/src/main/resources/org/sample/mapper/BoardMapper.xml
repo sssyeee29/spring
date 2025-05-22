@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.sample.mapper.BoardMapper">
+
+  <!-- 단건 조회 -->
+  <select id="read" resultType="org.sample.domain.BoardVO">
+    SELECT 
+      b.boardid AS pno,
+      p.title,
+      p.description,
+      p.price,
+      p.productid AS product,
+      p.condition,
+      u.nickname,
+      u.pwd,
+      b.status,
+      p.brand,
+      b.regdate,
+      (SELECT MIN(imgpath) FROM pd_imgpath i WHERE i.productid = p.productid) AS imgPath
+    FROM pd_board b
+    JOIN pd_product p ON b.productid = p.productid
+    JOIN pd_user u ON b.userid = u.userid
+    WHERE b.boardid = #{pno}
+  </select>
+
+  <!-- 전체 리스트 -->
+  <select id="getList" resultType="org.sample.domain.BoardVO">
+    SELECT 
+      b.boardid AS pno,
+      p.title,
+      p.description,
+      p.price,
+      p.productid AS product,
+      p.condition,
+      u.nickname,
+      u.pwd,
+      b.status,
+      p.brand,
+      b.regdate,
+      (SELECT MIN(imgpath) FROM pd_imgpath i WHERE i.productid = p.productid) AS imgPath
+    FROM pd_board b
+    JOIN pd_product p ON b.productid = p.productid
+    JOIN pd_user u ON b.userid = u.userid
+    ORDER BY b.boardid DESC
+  </select>
+
+  <!-- 게시글 등록 -->
+  <insert id="insert" parameterType="org.sample.domain.BoardVO">
+    <selectKey keyProperty="pno" resultType="long" order="BEFORE">
+      SELECT pd_board_seq.NEXTVAL FROM dual
+    </selectKey>
+    INSERT INTO pd_board(boardid, productid, userid, status, regdate)
+    VALUES (
+      #{pno},
+      #{product},
+      #{userId},
+      #{status},
+      SYSDATE
+    )
+  </insert>
+
+  <!-- 게시글 삭제 -->
+  <delete id="delete">
+    DELETE FROM pd_board WHERE boardid = #{pno}
+  </delete>
+
+  <!-- 게시글 수정 -->
+  <update id="update">
+    UPDATE pd_product
+    SET 
+      title = #{title},
+      description = #{description},
+      price = #{price},
+      condition = #{condition},
+      brand = #{brand}
+    WHERE productid = #{product};
+
+    UPDATE pd_board
+    SET 
+      status = #{status},
+      regdate = SYSDATE
+    WHERE boardid = #{pno}
+  </update>
+
+  <!-- 조건 검색 SQL 조각 -->
+  <sql id="criteria">
+    <trim prefix="(" suffix=") AND">
+      <foreach collection="typeArr" item="type" separator="OR">
+        <if test="type eq 'T'">
+          p.title LIKE '%' || #{keyword} || '%'
+        </if>
+        <if test="type eq 'C'">
+          p.description LIKE '%' || #{keyword} || '%'
+        </if>
+        <if test="type eq 'W'">
+          u.nickname LIKE '%' || #{keyword} || '%'
+        </if>
+      </foreach>
+    </trim>
+  </sql>
+
+  <!-- 페이징 -->
+  <select id="getListWithPaging" resultType="org.sample.domain.BoardVO">
+    <![CDATA[
+      SELECT * FROM (
+        SELECT rownum rn, p.*
+        FROM (
+          SELECT 
+            b.boardid AS pno,
+            p.title,
+            p.description,
+            p.price,
+            p.productid AS product,
+            p.condition,
+            u.nickname,
+            u.pwd,
+            b.status,
+            p.brand,
+            b.regdate,
+            (SELECT MIN(imgpath) FROM pd_imgpath i WHERE i.productid = p.productid) AS imgPath
+          FROM pd_board b
+          JOIN pd_product p ON b.productid = p.productid
+          JOIN pd_user u ON b.userid = u.userid
+          WHERE 1=1
+    ]]>
+    <if test="keyword != null and keyword != ''">
+      AND
+      <include refid="criteria"/>
+    </if>
+    <![CDATA[
+          ORDER BY b.boardid DESC
+        ) p
+        WHERE rownum <= #{pageNum} * #{amount}
+      )
+      WHERE rn > (#{pageNum} - 1) * #{amount}
+    ]]>
+  </select>
+
+  <!-- 총 게시글 수 -->
+  <select id="getTotalCount" resultType="int">
+    SELECT COUNT(*)
+    FROM pd_board b
+    JOIN pd_product p ON b.productid = p.productid
+    JOIN pd_user u ON b.userid = u.userid
+    WHERE
+    <include refid="criteria"/>
+    1=1
+  </select>
+
+  <!-- 동적 검색 테스트 -->
+  <select id="searchTest" resultType="org.sample.domain.BoardVO">
+    <![CDATA[
+      SELECT 
+        b.boardid AS pno,
+        p.title,
+        p.description,
+        p.price,
+        p.productid AS product,
+        p.condition,
+        u.nickname,
+        u.pwd,
+        b.status,
+        p.brand,
+        b.regdate,
+        (SELECT MIN(imgpath) FROM pd_imgpath i WHERE i.productid = p.productid) AS imgPath
+      FROM pd_board b
+      JOIN pd_product p ON b.productid = p.productid
+      JOIN pd_user u ON b.userid = u.userid
+      WHERE
+    ]]>
+    <trim suffix="AND">
+      <foreach collection="map" index="key" item="val" separator="OR" open="(" close=")">
+        <if test="key eq 'T'">
+          p.title LIKE #{val}
+        </if>
+        <if test="key eq 'C'">
+          p.description LIKE #{val}
+        </if>
+        <if test="key eq 'W'">
+          u.nickname LIKE #{val}
+        </if>
+      </foreach>
+    </trim>
+    <![CDATA[
+      AND rownum < 10
+    ]]>
+  </select>
+
+  <!-- 브랜드별 리스트 -->
+  <select id="getListByBrand" resultType="org.sample.domain.BoardVO">
+    SELECT 
+      b.boardid AS pno,
+      p.title,
+      p.description,
+      p.price,
+      p.productid AS product,
+      p.condition,
+      u.nickname,
+      u.pwd,
+      b.status,
+      p.brand,
+      b.regdate,
+      (SELECT MIN(imgpath) FROM pd_imgpath i WHERE i.productid = p.productid) AS imgPath
+    FROM pd_board b
+    JOIN pd_product p ON b.productid = p.productid
+    JOIN pd_user u ON b.userid = u.userid
+    WHERE p.brand = #{brand}
+    ORDER BY b.regdate DESC
+  </select>
+
+</mapper>

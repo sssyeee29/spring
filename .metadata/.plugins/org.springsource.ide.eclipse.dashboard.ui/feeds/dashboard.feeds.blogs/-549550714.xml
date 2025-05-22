@@ -1,32 +1,121 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Fri, 16 May 2025 05:08:58 GMT</lastBuildDate><item><title><![CDATA[Spring Web Services 4.0.14 available now]]></title><link>https://spring.io/blog/2025/05/15/spring-ws-4-0-14-available-now</link><guid isPermaLink="true">https://spring.io/blog/2025/05/15/spring-ws-4-0-14-available-now</guid><dc:creator><![CDATA[snicoll]]></dc:creator><pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I&apos;m happy to announce that Spring Web Services &lt;code&gt;4.0.14&lt;/code&gt; has been released and is now available from Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href=&quot;https://github.com/spring-projects/spring-ws/releases/tag/v4.0.14&quot;&gt;1 dependency upgrade&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;h3 id=&quot;how-can-you-help&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-can-you-help&quot; aria-label=&quot;how can you help permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How can you help?&lt;/h3&gt;
-&lt;p&gt;If you&apos;re interested in helping out, check out the &lt;a href=&quot;https://github.com/spring-projects/spring-ws/labels/status%3A%20ideal-for-contribution&quot;&gt;&quot;ideal for contribution&quot; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask on &lt;a href=&quot;https://stackoverflow.com&quot;&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href=&quot;https://stackoverflow.com/tags/spring-ws&quot;&gt;&lt;code&gt;spring-ws&lt;/code&gt; tag&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-ws/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-ws&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-ws/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-ws/docs/4.0.14/reference/html/&quot;&gt;Documentation&lt;/a&gt; | &lt;a href=&quot;https://stackoverflow.com/questions/tagged/spring-ws&quot;&gt;Stack Overflow&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[A Bootiful Podcast: Donald Raab on Eclipse Collections]]></title><link>https://spring.io/blog/2025/05/15/a-bootiful-podcast-don-raab</link><guid isPermaLink="true">https://spring.io/blog/2025/05/15/a-bootiful-podcast-don-raab</guid><dc:creator><![CDATA[joshlong]]></dc:creator><pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;Hi, Spring fans! In this edition, we talk to Eclipse Collections founder Donald Raab&lt;/p&gt;
-&lt;iframe title=&quot;Eclipse Collections legend Donald Raab&quot; allowtransparency=&quot;true&quot; height=&quot;300&quot; width=&quot;100%&quot; style=&quot;border: none; min-width: min(100%, 430px);height:300px;&quot; scrolling=&quot;no&quot; data-name=&quot;pb-iframe-player&quot; src=&quot;https://www.podbean.com/player-v2/?from=embed&amp;i=9i3rb-18adec4-pb&amp;square=1&amp;share=1&amp;download=1&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;rtl=0&amp;logo_link=&amp;btn-skin=7&amp;size=300&quot; loading=&quot;lazy&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[Spring Framework 7.0.0-M5 available now]]></title><link>https://spring.io/blog/2025/05/15/spring-framework-7-0-0-M5-available-now</link><guid isPermaLink="true">https://spring.io/blog/2025/05/15/spring-framework-7-0-0-M5-available-now</guid><dc:creator><![CDATA[bclozel]]></dc:creator><pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce a new milestone for the next Spring Framework generation.
-The fifth milestone continues delivering new features and refinements on top of &lt;a href=&quot;https://spring.io/blog/2025/01/23/spring-framework-7-0-0-M1-available-now&quot;&gt;7.0.0-M1&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2025/02/13/spring-framework-7-0-0-M2-available-now&quot;&gt;7.0.0-M2&lt;/a&gt;, &lt;a href=&quot;https://spring.io/blog/2025/03/13/spring-framework-7-0-0-M3-available-now&quot;&gt;7.0.0-M3&lt;/a&gt; and &lt;a href=&quot;https://spring.io/blog/2025/04/17/spring-framework-7-0-0-M4-available-now&quot;&gt;7.0.0-M4&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;jackson-30-support&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#jackson-30-support&quot; aria-label=&quot;jackson 30 support permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Jackson 3.0 support&lt;/h2&gt;
-&lt;p&gt;As of &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues/33798&quot;&gt;#33798&lt;/a&gt;, we default to supporting Jackson 3.x in our entire stack, falling back to Jackson 2.x.
-Support for the Jackson 2.x generation has been deprecated in Spring Framework, and our current plan is to disable its auto-detection in 7.1, and remove its support entirely in 7.2.&lt;/p&gt;
-&lt;p&gt;Jackson 3.x uses a new &lt;code&gt;tools.jackson&lt;/code&gt; package, which differs from the usual &lt;code&gt;com.fasterxml.jackson&lt;/code&gt;.
-Classes from the &quot;jackson-annotation&quot; artifact (like &lt;code&gt;@JsonView&lt;/code&gt;, &lt;code&gt;@JsonTypeInfo&lt;/code&gt;) remain in the &lt;code&gt;com.fasterxml.jackson&lt;/code&gt; package for easier upgrade.&lt;/p&gt;
-&lt;p&gt;There is no Jackson 3.x equivalent for &lt;code&gt;Jackson2ObjectMapperBuilder&lt;/code&gt;, we now recommend using Jackson&apos;s &lt;code&gt;JsonMapper.builder()&lt;/code&gt;, &lt;code&gt;CBORMapper.builder()&lt;/code&gt; and others as replacements.&lt;/p&gt;
-&lt;p&gt;We will update the relevant section of the &lt;a href=&quot;https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes#jackson-3x-support&quot;&gt;Spring Framework 7.0 Upgrade guide&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;api-versioning-update&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-versioning-update&quot; aria-label=&quot;api versioning update permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;API versioning update&lt;/h2&gt;
-&lt;p&gt;Our new API versioning feature got new updates, with now the ability to validate supported API versions only against explicitly configured ones,
-or setting the default version in &lt;code&gt;RestClient&lt;/code&gt; and  &lt;code&gt;WebClient&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;We added &lt;a href=&quot;https://docs.spring.io/spring-framework/reference/7.0-SNAPSHOT/web/webmvc/mvc-config/api-version.html#page-title&quot;&gt;new sections on API versioning&lt;/a&gt; in the official reference documentation.&lt;/p&gt;
-&lt;h2 id=&quot;and-much-more&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#and-much-more&quot; aria-label=&quot;and much more permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;And much more!&lt;/h2&gt;
-&lt;p&gt;As usual, you can check &lt;a href=&quot;https://github.com/spring-projects/spring-framework/releases/tag/v7.0.0-M5&quot;&gt;the detailed changelog&lt;/a&gt; for more details
-and &lt;a href=&quot;https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-7.0-Release-Notes&quot;&gt;read the global 7.0 release notes for upgrade concerns&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;7.0.0-M5 is now available from &lt;a href=&quot;https://repo.spring.io&quot;&gt;https://repo.spring.io&lt;/a&gt; and &lt;a href=&quot;https://spring.io/blog/2025/01/21/milestones-to-central&quot;&gt;Maven Central&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-framework/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-framework/reference/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Framework 6.1.20 and 6.2.7 releases fix CVE-2025-22233]]></title><link>https://spring.io/blog/2025/05/15/spring-framework-6-1-20-and-6-2-7-releases-fix-cve-2025-22233</link><guid isPermaLink="true">https://spring.io/blog/2025/05/15/spring-framework-6-1-20-and-6-2-7-releases-fix-cve-2025-22233</guid><dc:creator><![CDATA[bclozel]]></dc:creator><pubDate>Thu, 15 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I am pleased to announce that Spring Framework &lt;code&gt;6.1.20&lt;/code&gt; and &lt;code&gt;6.2.7&lt;/code&gt; are available now.&lt;/p&gt;
-&lt;p&gt;Spring Framework &lt;code&gt;6.1.20&lt;/code&gt; ships with &lt;a href=&quot;https://github.com/spring-projects/spring-framework/releases/tag/v6.1.20&quot;&gt;4 fixes and documentation improvements&lt;/a&gt;. This version will be shipped next week with Spring Boot &lt;code&gt;3.3.12&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;Spring Framework &lt;code&gt;6.2.7&lt;/code&gt; ships with &lt;a href=&quot;https://github.com/spring-projects/spring-framework/releases/tag/v6.2.7&quot;&gt;25 fixes and documentation improvements&lt;/a&gt;. This version will be shipped next week with Spring Boot &lt;code&gt;3.4.6&lt;/code&gt; and &lt;code&gt;3.5.0&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&quot;cve-2025-22233&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#cve-2025-22233&quot; aria-label=&quot;cve 2025 22233 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;CVE-2025-22233:&lt;/h3&gt;
-&lt;p&gt;The releases address &lt;a href=&quot;https://spring.io/security/cve-2025-22233&quot;&gt;CVE-2025-22233&lt;/a&gt; for Spring Framework DataBinder Case Sensitive Match Exception (2nd update).&lt;/p&gt;
-&lt;p&gt;Open source support for Spring Framework 5.3.x and 6.0.x generations has ended and will expire for the 6.1.x generation next month, see &lt;a href=&quot;https://spring.io/projects/spring-framework#support&quot;&gt;our support page for more information&lt;/a&gt;.
-This fix has been applied to the 5.3.43 and 6.0.28 commercial releases, available now.&lt;/p&gt;
-&lt;p&gt;If you are not a commercial customer, &lt;a href=&quot;https://spring.io/projects/spring-framework/#support&quot;&gt;please consider upgrading to an open source supported version&lt;/a&gt; at your earliest convenience.
-Commercial customers using Spring Boot 2.7, 3.1, or 3.2 can make use of Spring Boot Hotfix releases 2.7.25.1, 3.1.16.1, and 3.2.14.1. Releases are available now on the Spring commercial artifact repository and can be accessed with a &lt;a href=&quot;https://enterprise.spring.io&quot;&gt;Spring Enterprise Subscription&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-framework/&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework&quot;&gt;GitHub&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-framework/issues&quot;&gt;Issues&lt;/a&gt; | &lt;a href=&quot;https://docs.spring.io/spring-framework/reference/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Spring]]></title><description><![CDATA[Level up your Java code and explore what Spring can do for you.]]></description><link>https://spring.io</link><generator>GatsbyJS</generator><lastBuildDate>Thu, 22 May 2025 09:17:45 GMT</lastBuildDate><item><title><![CDATA[Spring Data Ahead of Time Repositories]]></title><link>https://spring.io/blog/2025/05/22/spring-data-ahead-of-time-repositories</link><guid isPermaLink="true">https://spring.io/blog/2025/05/22/spring-data-ahead-of-time-repositories</guid><dc:creator><![CDATA[christophstrobl]]></dc:creator><pubDate>Thu, 22 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;In the past couple of years we have seen heavy investment throughout the Java ecosystem to reduce application startup times. The main focus gravitates around Ahead-of-Time optimizations.
+May it be condensing code into a GraalVM native executable, capturing already optimized bytecode with Coordinated Restore at Checkpoint (CRaC), Class Data Sharing (CDS) or its more recent successor AOT cache (part of project &lt;a href=&quot;https://openjdk.org/projects/leyden/&quot;&gt;Leyden&lt;/a&gt;).
+While barriers to entry vary between the different approaches, all of them move performance optimizations away from runtime into an earlier phase, such as build time or a separate packaging step.&lt;/p&gt;
+&lt;p&gt;The Spring portfolio has you covered: It supports you in whichever direction you want to take it:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Providing runtime hints for GraalVM native images&lt;/li&gt;
+&lt;li&gt;Generating AOT code for bean definitions and wiring&lt;/li&gt;
+&lt;li&gt;Application Context snapshotting using Project Leyden premain training runs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With Spring Data 4.0 (or the &lt;code&gt;2025.1&lt;/code&gt; release train if you prefer calver) we are taking your repositories to AOT. We are shifting all the Repository preparations that are done at application startup to build time.&lt;/p&gt;
+&lt;h1 id=&quot;how-does-it-work-and-what-can-you-expect&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#how-does-it-work-and-what-can-you-expect&quot; aria-label=&quot;how does it work and what can you expect permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;How does it work and what can you expect?&lt;/h1&gt;
+&lt;p&gt;In short, when setting the &lt;code&gt;spring.aot.repositories.enabled=true&lt;/code&gt; configuration property, our AOT processing turns your repository query methods into actual source code by relying on the store-specific nature of the repository.
+Generated query methods contain the exact same code you would write if you would not use Spring Data to run your query.
+The generated source is then compiled together with your application and backing the repository interface.&lt;/p&gt;
+&lt;p&gt;Imagine a repository of pet owners as outlined below.&lt;/p&gt;
+&lt;p&gt;The repository itself does not inherit any functionality from one of the base repositories like &lt;code&gt;CrudRepository&lt;/code&gt; to keep the exposed functionality at a minimum.
+Still the &lt;code&gt;save&lt;/code&gt; method matches the signature of one of the predefined methods, while the two listed query methods are using a derived as well as explicitly annotated approach.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;interface OwnerRepository extends Repository&amp;#x3C;Owner, Integer&gt; {
+
+    Owner save(Owner owner);
+
+    List&amp;#x3C;OwnerSummary&gt; findAllByLastName(String lastName);
+
+    @Transactional(readOnly = true)
+    @Query(&quot;SELECT DISTINCT owner FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName%&quot;)
+    Page&amp;#x3C;Owner&gt; findByLastName(@Param(&quot;lastName&quot;) String lastName, Pageable pageable);
+
+    // ...
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;During the AOT phase the infrastructure will only consider relevant parts for the code generation.
+Take the before mentioned &lt;code&gt;save&lt;/code&gt; method for example: Since we are using JPA here, &lt;code&gt;SimpleJpaRepository&lt;/code&gt; already holds a default implementation for the &lt;code&gt;save&lt;/code&gt; method, allowing the code generation to skip the method.
+The same is true for any of your custom implementations.
+The remaining two methods for &lt;code&gt;OwnerRepository&lt;/code&gt; however are of course subject to AOT optimizations and end up in &lt;code&gt;OwnerRepositoryImpl__Aot&lt;/code&gt; located in the same package as the source &lt;code&gt;OwnerRepository&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-java&quot;&gt;@Generated
+public class OwnerRepositoryImpl__Aot extends AotRepositoryFragmentSupport {
+
+  private final EntityManager entityManager;
+
+  public OwnerRepositoryImpl__Aot(EntityManager entityManager,
+    RepositoryFactoryBeanSupport.FragmentCreationContext context) {
+    // ...
+  }
+
+  /**
+   * AOT generated implementation of {@link OwnerRepository#findAllByLastName(String)}.
+   */
+  public List&amp;#x3C;OwnerSummary&gt; findAllByLastName(String lastName) {
+    String queryString = &quot;SELECT o.firstName AS firstName, o.lastName AS lastName, o.city AS city FROM org.springframework.samples.petclinic.owner.Owner o WHERE o.lastName = :lastName&quot;;
+    Query query = this.entityManager.createQuery(queryString, Tuple.class);
+    query.setParameter(&quot;lastName&quot;, lastName);
+
+    return (List&amp;#x3C;OwnerSummary&gt;) convertMany(query.getResultList(), false, OwnerSummary.class);
+  }
+
+  /**
+   * AOT generated implementation of {@link OwnerRepository#findByLastName(String,Pageable)}.
+   */
+  public Page&amp;#x3C;Owner&gt; findByLastName(String lastName, Pageable pageable) {
+    String queryString = &quot;SELECT DISTINCT owner FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName&quot;;
+    String countQueryString = &quot;SELECT count(DISTINCT owner) FROM Owner owner left join owner.pets WHERE owner.lastName LIKE :lastName&quot;;
+    if (pageable.getSort().isSorted()) {
+      DeclaredQuery declaredQuery = DeclaredQuery.jpqlQuery(queryString);
+      queryString = rewriteQuery(declaredQuery, pageable.getSort(), Owner.class);
+    }
+    Query query = this.entityManager.createQuery(queryString);
+    query.setParameter(&quot;lastName&quot;, &quot;%s%%&quot;.formatted(lastName));
+    if (pageable.isPaged()) {
+      query.setFirstResult(Long.valueOf(pageable.getOffset()).intValue());
+      query.setMaxResults(pageable.getPageSize());
+    }
+    LongSupplier countAll = () -&gt; {
+      Query countQuery = this.entityManager.createQuery(countQueryString);
+      countQuery.setParameter(&quot;lastName&quot;, &quot;%s%%&quot;.formatted(lastName));
+      return (Long) countQuery.getSingleResult();
+    };
+
+    return PageableExecutionUtils.getPage((List&amp;#x3C;Owner&gt;) query.getResultList(), pageable, countAll);
+  }
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As you can see the generated code can be rather simple or grow in complexity depending on the query, parameter binding or the requested data and its representation.
+On application startup, the AOT-generated classes are wired into the repository composition that is backing the proxy created for the repository interface.
+So for the first time you can actually see and step into the code that is run when calling a method on a repository interface.&lt;/p&gt;
+&lt;p&gt;Debugability aside, pre-generated code helps with parsing queries and exploring assumptions. It shortens code paths during repository bootstrap leading to faster overall application startup and less memory.&lt;/p&gt;
+&lt;img style=&quot;float: right; display: block; margin: auto;&quot; src=&quot;https://raw.githubusercontent.com/spring-io/spring-io-static/refs/heads/main/blog/cstrobl/20250522/spring-petclinic-jpa-aot-repositories-benchmark-green_theme.png&quot;&gt;
+&lt;p&gt;Depending on the underlying data store the reduction can be rather significant, like for Spring Data JPA leading to an additional startup boost and less memory on top of already more efficient AOT optimizations.&lt;/p&gt;
+&lt;p&gt;Ahead-of-Time repositories are currently a preview feature that in their first incarnation being available for JPA (via Hibernate only) and MongoDB, with more modules to follow with upcoming milestones.&lt;/p&gt;
+&lt;p&gt;Please give this new feature a try and do not hesitate to get in touch with us to let us know what you think.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring for Apache Pulsar 1.1.12 and 1.2.6 are now available]]></title><link>https://spring.io/blog/2025/05/22/spring-for-apache-pulsar-1-1-12-and-1-2-6-are-now-available</link><guid isPermaLink="true">https://spring.io/blog/2025/05/22/spring-for-apache-pulsar-1-1-12-and-1-2-6-are-now-available</guid><dc:creator><![CDATA[onobc]]></dc:creator><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, I¡¯m happy to announce that Spring for Apache Pulsar &lt;code&gt;1.1.12&lt;/code&gt; and &lt;code&gt;1.2.6&lt;/code&gt; have been released and are now available from Maven Central.&lt;/p&gt;
+&lt;p&gt;The releases will be included in the upcoming Spring Boot &lt;a href=&quot;https://github.com/spring-projects/spring-boot/milestones/3.3.12&quot;&gt;3.3.12&lt;/a&gt; and &lt;a href=&quot;https://github.com/spring-projects/spring-boot/milestones/3.4.6&quot;&gt;3.4.6&lt;/a&gt; releases, respectively.&lt;/p&gt;
+&lt;p&gt;Please see the release notes (&lt;a href=&quot;https://github.com/spring-projects/spring-pulsar/releases/tag/v1.1.12&quot;&gt;1.1.12&lt;/a&gt; and &lt;a href=&quot;https://github.com/spring-projects/spring-pulsar/releases/tag/v1.2.6&quot;&gt;1.2.6&lt;/a&gt;) for more details.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Reactor Kafka Project Will Be Discontinued]]></title><link>https://spring.io/blog/2025/05/20/reactor-kafka-discontinued</link><guid isPermaLink="true">https://spring.io/blog/2025/05/20/reactor-kafka-discontinued</guid><dc:creator><![CDATA[jasonkonicki]]></dc:creator><pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;h1 id=&quot;reactor-kafka-project-will-be-discontinued&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#reactor-kafka-project-will-be-discontinued&quot; aria-label=&quot;reactor kafka project will be discontinued permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Reactor Kafka Project Will Be Discontinued&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;TL;DR:&lt;/strong&gt; We¡¯ve decided to discontinue future maintenance of the Reactor Kafka project and deprecate its associated components within the Spring portfolio.&lt;/p&gt;
+&lt;p&gt;Our team regularly evaluates our project portfolio with long-term sustainability in mind. When adoption declines, we thoughtfully retire projects to focus our efforts where the community needs them most. Based on an assessment of adoption metrics, download trends, project activity, and how Reactor Kafka fits into our overall strategy, we¡¯ve decided to end maintenance and integrations for the project.&lt;/p&gt;
+&lt;p&gt;What does this mean for our users?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/reactor/reactor-kafka&quot;&gt;Reactor Kafka&lt;/a&gt; will be removed from all future releases of the Reactor BOM.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Reactor Kafka 1.3 will be the final minor release. We will provide only necessary updates and fixes until the end of our &lt;a href=&quot;https://projectreactor.io/support&quot;&gt;OSS and Commercial support dates&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Spring Cloud Stream - &lt;a href=&quot;https://github.com/spring-cloud/spring-cloud-stream/tree/main/binders/kafka-binder/spring-cloud-stream-binder-kafka-reactive&quot;&gt;Reactor Kafka Binder&lt;/a&gt; will be deprecated and marked for future removal.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The Reactive template in Spring for Apache Kafka will be deprecated and marked for future removal.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We remain committed to the continued development of the Reactor ecosystem, including Reactor Core, Reactor Netty, and others.&lt;/p&gt;
+&lt;p&gt;We sincerely thank everyone who has contributed to the success of the Reactor Kafka project over the years. If you have any questions or concerns, feel free to reach out through the relevant GitHub repositories or leave a comment below.&lt;/p&gt;
+&lt;p&gt;Thank you,&lt;/p&gt;
+&lt;p&gt;Project Reactor Team&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Spring Authorization Server 1.5 goes GA]]></title><link>https://spring.io/blog/2025/05/20/spring-authorization-server-1-5-goes-ga</link><guid isPermaLink="true">https://spring.io/blog/2025/05/20/spring-authorization-server-1-5-goes-ga</guid><dc:creator><![CDATA[jgrandja]]></dc:creator><pubDate>Tue, 20 May 2025 00:00:00 GMT</pubDate><content:encoded>&lt;p&gt;On behalf of the team and everyone who has contributed, it is my pleasure to announce the release of Spring Authorization Server 1.5.&lt;/p&gt;
+&lt;p&gt;The 1.5 release contains a few noteworthy new features:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Add support for OAuth 2.0 Pushed Authorization Requests (PAR) &lt;a href=&quot;https://github.com/spring-projects/spring-authorization-server/pull/1925&quot;&gt;(gh-1925)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support OAuth 2.0 Demonstrating Proof of Possession (DPoP) &lt;a href=&quot;https://github.com/spring-projects/spring-authorization-server/issues/1813&quot;&gt;(gh-1813)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Support POST for authorization code request flow &lt;a href=&quot;https://github.com/spring-projects/spring-authorization-server/pull/1874&quot;&gt;(gh-1874)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;To get started using Spring Authorization Server, see the &lt;a href=&quot;https://docs.spring.io/spring-authorization-server/reference/getting-started.html&quot;&gt;Getting Started&lt;/a&gt; chapter of the reference documentation and the &lt;a href=&quot;https://github.com/spring-projects/spring-authorization-server/tree/main/samples&quot;&gt;samples&lt;/a&gt; to become familiar with setup and configuration.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://spring.io/projects/spring-authorization-server&quot;&gt;Project Page&lt;/a&gt; | &lt;a href=&quot;https://github.com/spring-projects/spring-authorization-server/issues&quot;&gt;GitHub Issues&lt;/a&gt; | &lt;a href=&quot;https://github.com/orgs/spring-projects/projects/8/views/21&quot;&gt;Project Board&lt;/a&gt;&lt;/p&gt;</content:encoded></item></channel></rss>

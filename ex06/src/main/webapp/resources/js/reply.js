@@ -23,7 +23,7 @@ let replyService = (function(){
                     error(er);
                 }
             }
-        });
+        });q
 
     } //end add
 

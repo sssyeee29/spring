@@ -40,7 +40,7 @@ public class UploadController {
 		log.info("upload form.......");
 	}
 	
-	@PostMapping("/uploadForm")
+	@PostMapping("/uploadFormAction")
 	public void uploadFormPost(MultipartFile[] uploadFile, Model model) {
 		
 		String uploadFolder = "c:\\upload";

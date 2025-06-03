@@ -63,7 +63,7 @@
 	</filter-mapping>
 	<!-- 한글 인코딩 End -->
 	
-	<filter>
+	<filter> <!-- 스프링 시큐리티가 스프링 MVC에서 사용되기 위해서는 필터를 이용해서 스프링 동작에 관여하도록 설정 -->
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>

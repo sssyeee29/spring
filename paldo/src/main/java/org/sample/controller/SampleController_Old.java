@@ -24,7 +24,7 @@ import lombok.extern.log4j.Log4j;
 @RestController //view화면을 찾지않고, response 값만 전달
 @RequestMapping("/sample")
 @Log4j
-public class SampleController {
+public class SampleController_Old {
 
 //	@GetMapping(value = "/getText", produces = "text/plain; charset=utf-8")
 //	@GetMapping(value = "/getText", produces = MediaType.TEXT_PLAIN_VALUE)

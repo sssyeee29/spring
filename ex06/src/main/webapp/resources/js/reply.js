@@ -23,14 +23,14 @@ let replyService = (function(){
                     error(er);
                 }
             }
-        });q
+        });
 
     } //end add
 
     function getList(param, callback, error){
         let bno = param.bno;
       
-        let page = param.page || 1; //값이 있으며 param.page에 넣고,없으면 1이나옴 
+        let page = param.page || 1; //값이 있으 param.page에 넣고,없으면 1이나옴 
         
         $.ajax({
             type : 'get', 

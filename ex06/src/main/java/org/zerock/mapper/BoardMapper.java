@@ -9,21 +9,21 @@ import org.zerock.domain.Criterial;
 
 public interface BoardMapper {
 
-	public List<BoardVO> getList();
+	public List<BoardVO> getList(); // 게시판 모든 게시글 목록 조회 
 
-	public BoardVO read(Long bno);
+	public BoardVO read(Long bno); // 특정 게시글 하나 bno(게시글 번호)로 조회
 
-	public void insert(BoardVO board); //데이터만 집어넣기 
+	public void insert(BoardVO board); //게시글을 새로 DB에 삽입 
 
-	public void insertSelectKey(BoardVO board); //데이터를 추가하면서 몇번째인지도 같이 알수있음
+	public void insertSelectKey(BoardVO board); //게시글 삽입하면서 자동 생성된 게시글 번호도 동시에 가져옴 
 	
-	public int delete(Long bno);
+	public int delete(Long bno); // 게시글 번호로 삭제 
 	
-	public int update(BoardVO board);
+	public int update(BoardVO board); //게시글 내용 수정 
 	
-	public List<BoardVO> getListWithPaging(Criterial cri); //페이징 처리가 되어있는 전체목록
+	public List<BoardVO> getListWithPaging(Criterial cri); //페이징 처리가 되어있는 게시글 전체 목록 조회
 
-	public int getTotalCount(Criterial cri); // 전체데이터 페이지 조회 
+	public int getTotalCount(Criterial cri); // 조건에 맞는 전체 게시글 수 조회 
 	
 	public List<BoardVO> searchTest(Map<String , Map<String,String>> map);
 

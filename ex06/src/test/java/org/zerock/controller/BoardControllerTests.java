@@ -48,12 +48,12 @@ public class BoardControllerTests {
 	@Test
 	public void testRegister() throws Exception{
 		String resultPage = mockMvc.perform(MockMvcRequestBuilders
-				.post("/board/register") //post요청으로 받아서
+				.post("/board/register") //post요청으로 받아서  // HTTP POST 요청을 /board/register 경로로 보냄
 				.param("title", "테스트 새글 제목") 
 				.param("content", "테스트 새글 내용")
-				.param("writer", "테스트 새글 작성자")//값을 세개 넣어서 리턴
+				.param("writer", "테스트 새글 작성자")//값을 세개 넣어서 리턴  //요청 파라미터 3개
 				).andReturn()
-				.getModelAndView()
+				.getModelAndView()//요청 실행 후 ModelAndView 객체를 받고, 그 중 뷰 이름만 추출 
 				.getViewName(); //select 아닌 3가지경우엔 이거를 써줌 
 		
 		log.info("==========>" + resultPage);

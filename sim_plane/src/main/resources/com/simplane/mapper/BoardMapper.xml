@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simplane.mapper.BoardMapper">
+
+
+    <insert id="create" parameterType="com.simplane.domain.BoardVO">
+        insert into sim_board (title, content, imagePath)
+        values (#{title}, #{content}, #{imagePath})
+    </insert>
+
+    <insert id="createSelectKey">
+        <selectKey keyProperty="boardid" order="AFTER" resultType="Long">
+            select last_insert_id()
+        </selectKey>
+        insert into sim_board(title, content, imagePath)
+        values(#{title}, #{content}, #{imagePath})
+    </insert>
+
+    <delete id="delete" parameterType="Long">
+        delete from sim_board where boardid = #{boardid}
+    </delete>
+
+
+</mapper>

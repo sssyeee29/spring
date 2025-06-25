@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.simplane.mapper.MemberMapper">
+
+    <insert id="create" parameterType="com.simplane.domain.MemberVO">
+        INSERT INTO sim_member (userid, password, name)
+        VALUES (#{userid}, #{password}, #{name})
+    </insert>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM sim_member WHERE memberid = #{memberid}
+    </delete>
+
+</mapper>

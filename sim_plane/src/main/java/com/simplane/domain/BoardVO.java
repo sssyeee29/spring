@@ -1,13 +1,12 @@
 package com.simplane.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@ToString
 @Builder // Data랑 builder를 해서 mapper테스트에서 builder 사용가능
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,6 +14,8 @@ import java.util.Date;
 public class BoardVO {
 
     private Long boardid;
+    private String writer;
+    private Long userid;
     private String title;
     private String content;
     private String imagePath;

@@ -5,24 +5,56 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>simplane</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- MetisMenu CSS -->
+  <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+
+  <!-- DataTables CSS -->
+  <link href="/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+
+  <!-- DataTables Responsive CSS -->
+  <link href="/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
   <title>Document</title>
   <style>
+
     body{margin: 0; padding: 0; font-family: "맑은 고딕";}
     ul,ol,li {list-style: none; margin: 0; padding: 0;}
 
     header{width: 1300px; height: 150px; margin: 0 auto; }
     #logo {float: left; width: 130px; height: 70px; margin: 30px 0 0 10px;}
     #logo > img {width: 140px; height: 90px; margin: 30px 0 0 100px;}
+
+    #login {width:250px; height:30px; float:right;  margin:20px 0 0 0px;}
+    #login ul {font-size:12px; color:#666;}
+    #login li {float:left; margin:0 5px; }
+    #login li a {text-decoration:none; color:#666;}
+
     input{align-items: center; width: 300px; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px;}
     button {padding: 5px 10px; font-size: 16px; cursor: pointer;}
 
     .seach{display: flex; align-items: center; width: 400px;
       border: 2px solid lightslategray; border-radius: 20px; padding: 10px 15px 0 0;}
 
-    nav{float:right; width: 740px; height: 30px; margin: 50px 70px 0 0;}
-    nav ul{font-family: "Arial"; font-weight: bold;}
-    nav ul li{float: left; padding: 0 20px;}
+    nav{float:right; width: 740px; height: 30px; margin: 70px 0 0 0; text-align: right}
+    nav ul{font-family: "Arial"; font-weight: bold; display: inline-block;}
+    nav ul li{float: left; padding: 0 20px; display: inline-block;}
     nav ul li a{text-decoration: none; color: #333;}
     nav ul li a:hover{color: green;}
 
@@ -47,22 +79,36 @@
     footer span{font-family: "돋움"; font-size: 12px; color: #666; margin: 20px 100px 0 0; float: left;}
 
     .board{margin : 0 auto}
+
+    .row{width: 1100px; margin: 0 auto;}
   </style>
 </head>
 <body>
 <header>
 
-  <div id="logo"><img src="img01/로고.JPG"></div>
+  <div id="logo"><img src="/img01/로고.JPG"></div>
+
+  <div id="login">
+
+    <ul>
+
+
+      <li><a href="#">로그인</a></li>
+
+      <li>|</li>
+
+
+      <li><a href="#">회원가입</a></li>
+    </ul>
+  </div>
 
   <nav>
     <ul>
-      <li><a href="#">카테고리</a></li>
-      <li><a href="#">신상품</a></li>
-      <li><a href="#">인기상품</a></li>
-      <li><a href="#">공개예정</a></li>
-      <li><a href="#">마감임박</a></li>
-      <li><a href="#">상품요청</a></li>
-      <li><a href="/board/list">고객센터</a></li>
+      <li><a href="#">심리테스트</a></li>
+      <li><a href="#">운세</a></li>
+      <li><a href="#">궁합</a></li>
+      <li><a href="#">포춘쿠키</a></li>
+      <li><a href="/board/list">문의게시판</a></li>
     </ul>
   </nav>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

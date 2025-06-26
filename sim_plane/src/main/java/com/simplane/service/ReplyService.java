@@ -5,8 +5,8 @@ import com.simplane.domain.ReplyVO;
 
 public interface ReplyService {
 
-    public int create(ReplyVO vo);
+    public int register(ReplyVO vo);
 
-    public int delete(Long replyid);
+    public int remove(Long replyid);
 
 }

@@ -19,11 +19,11 @@ public class ReplyServiceImpl implements ReplyService {
 
     @Override
     public int register(ReplyVO vo) {
-        boardMapper.updateReplyCnt(vo.getreply());
+        return mapper.create(vo);
     }
 
     @Override
-    public int delete(Long replyid) {
-        return 0;
+    public int remove(Long replyid) {
+        return mapper.delete(replyid);
     }
 }

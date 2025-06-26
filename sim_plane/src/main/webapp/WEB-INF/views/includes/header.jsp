@@ -33,6 +33,7 @@
 
   <title>Document</title>
   <style>
+
     body{margin: 0; padding: 0; font-family: "맑은 고딕";}
     ul,ol,li {list-style: none; margin: 0; padding: 0;}
 
@@ -85,7 +86,7 @@
 <body>
 <header>
 
-  <div id="logo"><img src="img01/로고.JPG"></div>
+  <div id="logo"><img src="/img01/로고.JPG"></div>
 
   <div id="login">
 

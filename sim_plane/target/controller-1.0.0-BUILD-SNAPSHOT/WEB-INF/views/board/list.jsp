@@ -3,7 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ include file="../includes/header.jsp" %>
-
+<style>
+    .panel-heading {height: 40px; align-items: center; }
+</style>
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">문의게시판</h1>
@@ -194,10 +196,13 @@
         }); // end 페이지 번호 이벤트 처리
 
 
-        // 상세페이지 이동시 pageNum, amout값 전달   <td><a class="move" href='<c:out value="${board.boardid}"/>'>
+        <%--상세페이지 이동시 pageNum, amount값 전달   <td><a class="move" href='<c:out value="${board.boardid}"/>'> --%>
         $(".move").on("click", function(e){
 
             e.preventDefault();
+
+            // 기존 boardid 필드 제거
+            actionForm.find("input[name='boardid']").remove();
 
             actionForm.append("<input type='hidden' name='boardid' value='" + $(this).attr("href") + "' >");
 

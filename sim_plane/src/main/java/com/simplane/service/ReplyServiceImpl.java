@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class ReplyServiceImpl implements ReplyService {
 
     private final ReplyMapper mapper;
-    private final BoardMapper boardMapper;
 
 
     @Override

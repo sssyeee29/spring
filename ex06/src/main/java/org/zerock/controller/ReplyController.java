@@ -33,7 +33,7 @@ public class ReplyController {
 	@PreAuthorize("isAuthenticated()")
 	@PostMapping(value = "/new")
 	public ResponseEntity<String> create(@RequestBody ReplyVO vo){ //@RequestBody -> json형태로 받아주겠다.
-		log.info("ReplyVO : + vo");
+		log.info("ReplyVO : " + vo);
 		int insertCount = service.register(vo);
 		
 		if(insertCount == 1) {

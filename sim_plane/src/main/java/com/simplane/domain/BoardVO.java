@@ -15,7 +15,6 @@ public class BoardVO {
 
     private Long boardid;
     private String writer;
-    private Long userid;
     private String title;
     private String content;
     private String imagePath;

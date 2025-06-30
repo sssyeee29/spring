@@ -1,14 +1,22 @@
 package com.simplane.domain;
 
-import java.util.Date;
+import lombok.Data;
 
+import java.sql.Date;
+import java.util.List;
+
+
+@Data
 //로그인
 public class MemberVO {
 
-    private Long memberid;
+    private Integer memberid;
     private String userid;
     private String password;
     private Date birthdate;
-    private Integer sex;
+    private int sex;
     private String name;
+    private List<AuthVO> authList;
+
+
 }

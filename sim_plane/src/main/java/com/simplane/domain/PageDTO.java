@@ -2,11 +2,11 @@ package com.simplane.domain;
 
 import lombok.Getter;
 import lombok.ToString;
-import lombok.extern.slf4j.Slf4j;
+import lombok.extern.log4j.Log4j;
 
 @Getter
 @ToString
-@Slf4j
+@Log4j
 public class PageDTO {
 
     private int startPage;

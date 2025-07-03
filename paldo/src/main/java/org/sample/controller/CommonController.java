@@ -10,28 +10,30 @@ import lombok.extern.log4j.Log4j;
 @Controller
 @Log4j
 public class CommonController {
-
-	//에러페이지
+	
 	@GetMapping("/accessError")
-	public void accessDenied(Authentication auth, Model model) {
-		log.info("access Denied : " + auth);
-		model.addAttribute("msg", "Access Denied");
+	public void accessDenied(Authentication authentication, Model model) {
+		log.info("access Denied : " + authentication);
+		model.addAttribute("msg", "접근이 거부되었습니다.");
 	}
 	
-	//customLogin 페이지 이동
 	@GetMapping("/customLogin")
 	public void loginInput(String error, String logout, Model model) {
+		
 		log.info("error : " + error);
 		log.info("logout : " + logout);
 		
-		if (error != null) {
-			model.addAttribute("error", "Login Error Check Your Account");
+		if(error != null) {
+			model.addAttribute("error", "Login Error Check Your Account"); //로그인 실패
 		}
 		
-		if (logout != null) {
+		if(logout != null) {
 			model.addAttribute("logout", "Logout!!");
 		}
 	}
 	
-	
+	@GetMapping("/customLogout")
+	public void logoutGet() {
+		log.info("custom logout");
+	}
 }

@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="taglib"/>
+		<item key="selection" value=""/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="top"/>
+			<item value="margin"/>
+			<item value="25"/>
+			<item value="security"/>
+			<item value="security-context.xml"/>
+			<item value="filter"/>
+			<item value="proxy"/>
+			<item value="pro"/>
 			<item value="taglib"/>
 			<item value="tx"/>
-			<item value="security"/>
 			<item value="../"/>
 			<item value="100"/>
 			<item value="postDTO"/>
 			<item value="get"/>
 			<item value="boardid"/>
-			<item value="myba"/>
-			<item value="jstl"/>
-			<item value="post"/>
-			<item value="bno"/>
-			<item value="page-wrapper"/>
-			<item value="/resource/"/>
-			<item value="/resources/"/>
 		</list>
 		<list key="replacehistory">
 			<item value="/resources/"/>
@@ -31,8 +31,8 @@
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="322"/>
-		<item key="DIALOG_Y_ORIGIN" value="229"/>
+		<item key="DIALOG_X_ORIGIN" value="-171"/>
+		<item key="DIALOG_Y_ORIGIN" value="337"/>
 		<item key="DIALOG_WIDTH" value="366"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>

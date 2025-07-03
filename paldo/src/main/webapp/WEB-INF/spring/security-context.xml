@@ -4,36 +4,50 @@
 	xmlns:security="http://www.springframework.org/schema/security"
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-5.2.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-<bean id="customAccessDenied" class="org.sample.security.CustomAccessDeniedHandler"></bean>
-<security:http>
-
-	<security:intercept-url pattern="/sample/all" access="permitAll"/>
-	<security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')"/>
-	<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')"/>
 	
-<!--  <security:access-denied-handler error-page="/accessError"/> -->
-	<security:access-denied-handler ref="customAccessDenied"/>	
-
- 	<security:form-login login-page="/customLogin"/>
- 	
-
-</security:http>
-
-<security:authentication-manager>
-
-	<security:authentication-provider>
+	<bean id="customAccessDenied" class="org.sample.security.CustomAccessDeniedHandler"></bean>
+	<!-- <bean id="customLoginSuccess" class="org.zerock.security.CustomLoginSuccessHandler"></bean> -->
+	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
+	<bean id="customUserDetailsService" class="org.sample.security.CustomUserDetailsService"></bean>
 	
-		<security:user-service>
+	
+	<!-- 인증(접근 제어 설정) --> <!-- http 요청시 로그인한 사용자의 권한에 따라 접근을 허용할지 막을지를 설정하는 보안규칙 -->
+	<security:http>
 			
-			<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>		
-			<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN"/>		
+		<security:intercept-url pattern="/sample/all" access="permitAll"/>
+		<security:intercept-url pattern="/sample/member" access="hasRole('ROLE_MEMBER')"/>
+		<security:intercept-url pattern="/sample/admin" access="hasRole('ROLE_ADMIN')"/>
 		
-		</security:user-service>
-	
-	</security:authentication-provider>
+		
+		
+		<!-- csrf 보안 정책을 사용하지 않겠다. 
+		<security:csrf disabled="true"/>-->
+		
+		<!-- <security:form-login/> --><!-- ctrl+shift+/ -->
+		<!-- 시큐리티가 제공하는 로그인 페이지를 사용하지않고, 내가 직접 로그인 페이지를 구현하겠다. -->
+	<!-- 	<security:form-login login-page="/customLogin"
+			authentication-success-handler-ref ="customLoginSuccess"/> 로그인성공시 해당 ref로 이동 -->
+			
+		<security:form-login login-page="/customLogin"/> <!-- 로그인성공시 해당 ref로 이동 -->
+		
+		<!-- <security:access-denied-handler error-page="/accessError"/> -->
+		<!-- 접근 권한이 없을 때 실행되는 handler // 예) 회원이 관리자페이지 접근시 -->
+		<security:access-denied-handler ref="customAccessDenied"/>
+		
+		<security:logout logout-url="/customLogout" invalidate-session="true"
+							delete-cookies="remember-me,JSESSION_ID"/>
+																	<!-- 일주일 -->
+		<security:remember-me data-source-ref="dataSource" token-validity-seconds="86400"/>
+		
+	</security:http>
 
-</security:authentication-manager>
-
-
+	<!-- 인가(권한) -->
+	<security:authentication-manager>
+		<security:authentication-provider user-service-ref="customUserDetailsService">
+			<!-- DB연결해서 썼었던걸 안쓰고 customUserDetailsService 여기를 참고해서 쓰겠다 -->
+			<!-- <security:jdbc-user-service data-source-ref="dataSource"/> --> 
+			
+			<security:password-encoder ref="bcryptPasswordEncoder"/>
+		</security:authentication-provider>
+	</security:authentication-manager>
 </beans>

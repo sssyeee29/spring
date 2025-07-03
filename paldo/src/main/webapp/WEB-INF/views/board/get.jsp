@@ -114,7 +114,7 @@
           <label for="quantity">구매 수량</label>
           <input type="text" id="quantity" class="qty" value="1" readonly>
           <span class="sum-price">
-            총 금액: <fmt:formatNumber value="${dto.product.price}" pattern="#,/###"/>원
+            총 금액: <fmt:formatNumber value="${dto.product.price}" pattern="#,###"/>원
           </span>
         </div>
         <button type="button" class="btn-blue btn-purchase" disabled>즉시 구매하기</button>
